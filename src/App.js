@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="card">
+      <Avatar />
+      <div className="data">
+        <Bio />
+        <br />
+        <SkillList />
+      </div>
+    </div>
+  );
+}
+
+function Avatar() {
+  return <img src="logo192.png" alt="LOGO" className="avatar" />;
+}
+
+function Bio() {
+  return (
+    <div>
+      <h1>Vibhab Timsina</h1>
+      <p>
+        Front End Developer, currently learning React. It is kicking my ass.
+      </p>
+    </div>
+  );
+}
+
+function SkillList(props) {
+  return (
+    <div className="skill-list">
+      <Skill name="HTML/CSS" emoji="👨‍💻" color="blue" />
+      <Skill name="React" emoji="😧" color="red" />
+      <Skill name="Python" emoji="🐍" color="cyan" />
+      <Skill name="Kei Audaina" emoji="😔" color="yellow" />
+      <Skill name="Gari khana deu" emoji="❌" color="orange" />
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      {props.name} {props.emoji}
     </div>
   );
 }
